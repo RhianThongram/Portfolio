@@ -1,0 +1,251 @@
+:root {
+  --primary-color: #050505;
+  --text-color: #0a0a0a;
+  --background-light: #2b2f2e;
+  --header-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 110%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", Helvetica, sans-serif;
+  color: #101111;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.header-background {
+  background: linear-gradient(
+      rgba(255, 254, 253, 0.7),
+      rgba(255, 254, 253, 0.9)
+    ),
+    url("backg.jpg") center center fixed;
+  background-size: cover;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 0;
+  animation: slideDown 1s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: "Unica One", cursive;
+  font-size: 1.2rem;
+}
+
+.header-content img {
+  max-width: 350px;
+  border-radius: 50%;
+  animation: rotate 4s linear infinite alternate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.header-content h1,
+.header-content p {
+  margin: 0.5rem 0;
+  font-family: "Unica One", cursive;
+}
+
+#about {
+  background: linear-gradient(
+      rgba(255, 254, 253, 0.7),
+      rgba(255, 254, 253, 0.9)
+    ),
+    url("planet.jpg") center center fixed;
+  background-size: cover;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 40px;
+  border-radius: 0.5%;
+  text-align: center;
+  /* animation: tilt 2s infinite alternate; */
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.profile-photo {
+  max-width: 90%;
+  height: auto;
+  border-radius: 80%;
+}
+
+#portfolio {
+  background-color: #b5c18e;
+  padding: 15px;
+  border-radius: 0.5%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.project {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+  line-height: 200px;
+  background-color: #9c8268;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+#contact {
+  background-color: #524c42;
+  padding: 15px;
+  border-radius: 0.5%;
+  text-align: center;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.td-btn {
+  padding: 12px 36px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
+  background-color: #d1bb9e;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+.td-btn:hover {
+  background-color: #b69d80;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+footer {
+  background-color: #f1f5a8;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Additional Styles */
+h2 {
+  color: #333;
+  font-family: "Unica One", cursive;
+  font-size: 2.3rem;
+}
+
+a {
+  color: #29a598;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #208479;
+}
+
+.moveable-text {
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .profile-photo {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
